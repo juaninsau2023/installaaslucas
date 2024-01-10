@@ -1,14 +1,15 @@
 #!/bin/bash
 #
-# functions for setting up app backend
+# Funciones para configurar el backend de la aplicación
+
 #######################################
-# creates REDIS db using docker
-# Arguments:
-#   None
+# Crea la base de datos REDIS utilizando Docker
+# Argumentos:
+#   Ninguno
 #######################################
 backend_redis_create() {
   print_banner
-  printf "${WHITE} 💻 Criando Redis & Banco Postgres...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Creando Redis y la base de datos Postgres...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -32,23 +33,23 @@ sleep 2
 }
 
 #######################################
-# sets environment variable for backend.
-# Arguments:
-#   None
+# Configura las variables de entorno para el backend.
+# Argumentos:
+#   Ninguno
 #######################################
 backend_set_env() {
   print_banner
-  printf "${WHITE} 💻 Configurando variáveis de ambiente (backend)...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Configurando variables de entorno (backend)...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
 
-  # ensure idempotency
+  # Asegurar la idempotencia
   backend_url=$(echo "${backend_url/https:\/\/}")
   backend_url=${backend_url%%/*}
   backend_url=https://$backend_url
 
-  # ensure idempotency
+  # Asegurar la idempotencia
   frontend_url=$(echo "${frontend_url/https:\/\/}")
   frontend_url=${frontend_url%%/*}
   frontend_url=https://$frontend_url
@@ -85,13 +86,13 @@ EOF
 }
 
 #######################################
-# installs node.js dependencies
-# Arguments:
-#   None
+# Instala las dependencias de node.js
+# Argumentos:
+#   Ninguno
 #######################################
 backend_node_dependencies() {
   print_banner
-  printf "${WHITE} 💻 Instalando dependências do backend...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Instalando dependencias del backend...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -105,13 +106,13 @@ EOF
 }
 
 #######################################
-# compiles backend code
-# Arguments:
-#   None
+# Compila el código del backend
+# Argumentos:
+#   Ninguno
 #######################################
 backend_node_build() {
   print_banner
-  printf "${WHITE} 💻 Compilando o código do backend...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Compilando el código del backend...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -125,13 +126,13 @@ EOF
 }
 
 #######################################
-# updates frontend code
-# Arguments:
-#   None
+# Actualiza el código del backend
+# Argumentos:
+#   Ninguno
 #######################################
 backend_update() {
   print_banner
-  printf "${WHITE} 💻 Atualizando o backend...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Actualizando el backend...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -156,13 +157,13 @@ EOF
 }
 
 #######################################
-# runs db migrate
-# Arguments:
-#   None
+# Ejecuta migraciones de la base de datos
+# Argumentos:
+#   Ninguno
 #######################################
 backend_db_migrate() {
   print_banner
-  printf "${WHITE} 💻 Executando db:migrate...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Ejecutando db:migrate...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -176,13 +177,13 @@ EOF
 }
 
 #######################################
-# runs db seed
-# Arguments:
-#   None
+# Ejecuta semillas en la base de datos
+# Argumentos:
+#   Ninguno
 #######################################
 backend_db_seed() {
   print_banner
-  printf "${WHITE} 💻 Executando db:seed...${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Ejecutando db:seed...${GRAY_LIGHT}"
   printf "\n\n"
 
   sleep 2
@@ -196,10 +197,10 @@ EOF
 }
 
 #######################################
-# starts backend using pm2 in 
-# production mode.
-# Arguments:
-#   None
+# Inicia el backend utilizando pm2 en
+# modo de producción.
+# Argumentos:
+#   Ninguno
 #######################################
 backend_start_pm2() {
   print_banner
@@ -217,9 +218,9 @@ EOF
 }
 
 #######################################
-# updates frontend code
-# Arguments:
-#   None
+# Configura nginx para el backend
+# Argumentos:
+#   Ninguno
 #######################################
 backend_nginx_setup() {
   print_banner
