@@ -201,7 +201,7 @@ sleep 2
 server {
   server_name $backend_hostname;
   location / {
-    proxy_pass http://127.0.0.1:${alter_backend_port};
+    proxy_pass http://{$backend_hostname}:${alter_backend_port};
     proxy_http_version 1.1;
     proxy_set_header Upgrade \$http_upgrade;
     proxy_set_header Connection 'upgrade';
@@ -225,7 +225,7 @@ cat > /etc/nginx/sites-available/${empresa_dominio}-frontend << 'END'
 server {
   server_name $frontend_hostname;
   location / {
-    proxy_pass http://127.0.0.1:${alter_frontend_port};
+    proxy_pass http://${frontend_hostname}:${alter_frontend_port};
     proxy_http_version 1.1;
     proxy_set_header Upgrade \$http_upgrade;
     proxy_set_header Connection 'upgrade';
