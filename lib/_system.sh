@@ -276,8 +276,8 @@ system_node_install() {
   sleep 2
 
   sudo su - root <<EOF
-  curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-  apt-get install -y nodejs
+  curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
+  sudo apt-get install -y nodejs
   sleep 2
   npm install -g npm@latest
   sleep 2

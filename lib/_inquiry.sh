@@ -176,17 +176,17 @@ software_update() {
 
 software_delete() {
   get_empresa_delete
-  delete_everything
+  deletar_tudo
 }
 
 software_bloquear() {
   get_empresa_bloquear
-  configure_block
+  configurar_bloqueio
 }
 
 software_desbloquear() {
   get_empresa_desbloquear
-  configure_unblock
+  configurar_desbloqueio
 }
 
 software_dominio() {
@@ -195,11 +195,10 @@ software_dominio() {
   get_alter_backend_url
   get_alter_frontend_port
   get_alter_backend_port
-  configure_domain
+  configurar_dominio
 }
 
 inquiry_options() {
-  
   print_banner
   printf "${WHITE} 💻 Bienvenido(a) al Gestor Whaticket, ¡Seleccione a continuación la próxima acción!${GRAY_LIGHT}"
   printf "\n\n"

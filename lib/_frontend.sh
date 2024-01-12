@@ -17,6 +17,7 @@ frontend_node_dependencies() {
   sudo su - deploy <<EOF
   cd /home/deploy/${instancia_add}/frontend
   npm install --force
+  npm audit fix --force
 EOF
 
   sleep 2
