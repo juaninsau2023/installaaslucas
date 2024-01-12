@@ -195,7 +195,7 @@ software_dominio() {
   get_alter_backend_url
   get_alter_frontend_port
   get_alter_backend_port
-  configure_domain
+  configurar_dominio
 }
 
 inquiry_options() {
