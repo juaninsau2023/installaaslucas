@@ -14,10 +14,16 @@ system_create_user() {
 
   sleep 2
 
-  sudo su - root <<EOF
-  useradd -m -p $(openssl passwd -crypt ${mysql_root_password}) -s /bin/bash -G sudo deploy
-  usermod -aG sudo deploy
+  if id "deploy" >/dev/null 2>&1; then
+    echo "A conta de usuário 'deploy' já existe."
+  else
+    # Cria a conta de usuário "deploy"
+      sudo su - root <<EOF
+        useradd -m -p $(openssl passwd -crypt ${mysql_root_password}) -s /bin/bash -G sudo deploy
+        usermod -aG sudo deploy
 EOF
+    echo "A conta de usuário 'deploy' foi criada com sucesso."
+  fi
 
   sleep 2
 }
@@ -74,6 +80,7 @@ deletar_tudo() {
   sleep 2
 
   sudo su - root <<EOF
+  docker exec -it redis-${empresa_delete} redis-cli FLUSHALL
   docker container rm redis-${empresa_delete} --force
   cd && rm -rf /etc/nginx/sites-enabled/${empresa_delete}-frontend
   cd && rm -rf /etc/nginx/sites-enabled/${empresa_delete}-backend  
