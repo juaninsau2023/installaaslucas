@@ -41,7 +41,6 @@ get_max_user() {
 }
 
 get_frontend_url() {
-  
   print_banner
   printf "${WHITE} 💻 Ingrese el dominio del FRONTEND/PANEL para ${instancia_add}:${GRAY_LIGHT}"
   printf "\n\n"
@@ -49,7 +48,6 @@ get_frontend_url() {
 }
 
 get_backend_url() {
-  
   print_banner
   printf "${WHITE} 💻 Ingrese el dominio del BACKEND/API para ${instancia_add}:${GRAY_LIGHT}"
   printf "\n\n"
@@ -57,16 +55,13 @@ get_backend_url() {
 }
 
 get_frontend_port() {
-  
   print_banner
   printf "${WHITE} 💻 Ingrese el puerto del FRONTEND para ${instancia_add}; Ejemplo: 3000 A 3999 ${GRAY_LIGHT}"
   printf "\n\n"
   read -p "> " frontend_port
 }
 
-
 get_backend_port() {
-  
   print_banner
   printf "${WHITE} 💻 Ingrese el puerto del BACKEND para esta instancia; Ejemplo: 4000 A 4999 ${GRAY_LIGHT}"
   printf "\n\n"
@@ -74,7 +69,6 @@ get_backend_port() {
 }
 
 get_redis_port() {
-  
   print_banner
   printf "${WHITE} 💻 Ingrese el puerto de REDIS/PROGRAMACIÓN DE MENSAJES para ${instancia_add}; Ejemplo: 5000 A 5999 ${GRAY_LIGHT}"
   printf "\n\n"
@@ -82,7 +76,6 @@ get_redis_port() {
 }
 
 get_empresa_delete() {
-  
   print_banner
   printf "${WHITE} 💻 Ingrese el nombre de la Instancia/Empresa que se eliminará (Ingrese el mismo nombre utilizado durante la instalación):${GRAY_LIGHT}"
   printf "\n\n"
@@ -90,7 +83,6 @@ get_empresa_delete() {
 }
 
 get_empresa_atualizar() {
-  
   print_banner
   printf "${WHITE} 💻 Ingrese el nombre de la Instancia/Empresa que desea actualizar (Ingrese el mismo nombre utilizado durante la instalación):${GRAY_LIGHT}"
   printf "\n\n"
@@ -98,7 +90,6 @@ get_empresa_atualizar() {
 }
 
 get_empresa_bloquear() {
-  
   print_banner
   printf "${WHITE} 💻 Ingrese el nombre de la Instancia/Empresa que desea bloquear (Ingrese el mismo nombre utilizado durante la instalación):${GRAY_LIGHT}"
   printf "\n\n"
@@ -106,7 +97,6 @@ get_empresa_bloquear() {
 }
 
 get_empresa_desbloquear() {
-  
   print_banner
   printf "${WHITE} 💻 Ingrese el nombre de la Instancia/Empresa que desea desbloquear (Ingrese el mismo nombre utilizado durante la instalación):${GRAY_LIGHT}"
   printf "\n\n"
@@ -114,7 +104,6 @@ get_empresa_desbloquear() {
 }
 
 get_empresa_dominio() {
-  
   print_banner
   printf "${WHITE} 💻 Ingrese el nombre de la Instancia/Empresa que desea cambiar de dominio (Atención: para cambiar de dominio, debe ingresar ambos, aunque solo vaya a cambiar uno):${GRAY_LIGHT}"
   printf "\n\n"
@@ -122,7 +111,6 @@ get_empresa_dominio() {
 }
 
 get_alter_frontend_url() {
-  
   print_banner
   printf "${WHITE} 💻 Ingrese el NUEVO dominio del FRONTEND/PANEL para ${empresa_dominio}:${GRAY_LIGHT}"
   printf "\n\n"
@@ -130,24 +118,20 @@ get_alter_frontend_url() {
 }
 
 get_alter_backend_url() {
-  
   print_banner
   printf "${WHITE} 💻 Ingrese el NUEVO dominio del BACKEND/API para ${empresa_dominio}:${GRAY_LIGHT}"
   printf "\n\n"
   read -p "> " alter_backend_url
 }
 
-get_alter_frontend_port() {
-  
+get_alter_frontend_port() {  
   print_banner
   printf "${WHITE} 💻 Ingrese el puerto del FRONTEND de la Instancia/Empresa ${empresa_dominio}; El puerto debe ser el mismo que se proporcionó durante la instalación ${GRAY_LIGHT}"
   printf "\n\n"
   read -p "> " alter_frontend_port
 }
 
-
 get_alter_backend_port() {
-  
   print_banner
   printf "${WHITE} 💻 Ingrese el puerto del BACKEND de la Instancia/Empresa ${empresa_dominio}; El puerto debe ser el mismo que se proporcionó durante la instalación ${GRAY_LIGHT}"
   printf "\n\n"

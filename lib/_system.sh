@@ -406,7 +406,6 @@ system_pm2_install() {
 
   sudo su - root <<EOF
   npm install -g pm2
-
 EOF
 
   sleep 2
@@ -505,12 +504,10 @@ system_nginx_conf() {
 
   sleep 2
 
-sudo su - root << EOF
-
-cat > /etc/nginx/conf.d/deploy.conf << 'END'
-client_max_body_size 100M;
-END
-
+  sudo su - root << EOF
+  cat > /etc/nginx/conf.d/deploy.conf << 'END'
+  client_max_body_size 100M;
+  END
 EOF
 
   sleep 2
@@ -537,7 +534,6 @@ system_certbot_setup() {
           --agree-tos \
           --non-interactive \
           --domains $backend_domain,$frontend_domain
-
 EOF
 
   sleep 2
