@@ -504,10 +504,12 @@ system_nginx_conf() {
 
   sleep 2
 
-  sudo su - root << EOF
-  cat > /etc/nginx/conf.d/deploy.conf << END
-  client_max_body_size 100M;
-  END
+sudo su - root << EOF
+
+cat > /etc/nginx/conf.d/deploy.conf << 'END'
+client_max_body_size 100M;
+END
+
 EOF
 
   sleep 2
