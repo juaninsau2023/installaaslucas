@@ -80,8 +80,8 @@ deletar_tudo() {
   sleep 2
 
   sudo su - root <<EOF
-  docker exec -it redis-${empresa_delete} redis-cli FLUSHALL
-  docker container rm redis-${empresa_delete} --force
+  docker stop redis-${empresa_delete} 
+  docker rm redis-${empresa_delete} 
   cd && rm -rf /etc/nginx/sites-enabled/${empresa_delete}-frontend
   cd && rm -rf /etc/nginx/sites-enabled/${empresa_delete}-backend  
   cd && rm -rf /etc/nginx/sites-available/${empresa_delete}-frontend
